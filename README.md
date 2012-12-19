@@ -1,7 +1,7 @@
 kaggle-so
 =========
 
-My stab at a Kaggle competition and implementation bayesian classification in Lisp.
+My stab at a Kaggle competition and implementation of Bayesian classification in Lisp.
 
 Requires SBCL and Quicklisp.
 
