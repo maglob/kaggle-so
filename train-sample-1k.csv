@@ -1,0 +1,988 @@
+PostId,PostCreationDate,OwnerUserId,OwnerCreationDate,ReputationAtPostCreation,OwnerUndeletedAnswerCountAtPostTime,Title,BodyMarkdown,Tag1,Tag2,Tag3,Tag4,Tag5,PostClosedDate,OpenStatus
+6046168,05/18/2011 14:14:05,543315,09/17/2010 10:15:06,1,2,For Mongodb is it better to reference an object or use a natural String key?,"I am building a corpus of indexed sentences in different languages. I have a collection of Languages which have both an ObjectId and the ISO code as a key. Is it better to use a reference to the Language collection or store a key like ""en"" or ""fr""?
+
+I suppose it's a compromise between:
+
+ - ease of referencing the Language
+ - object in that collection
+ - speed in doing queries where the sentence has a certain language
+ - the size of the data on disk
+
+Any best practices that I should know of?",mongodb,,,,,,open
+4873911,02/02/2011 11:30:10,465076,10/03/2010 09:30:58,192,24,How to insert schemalocation in a xml document via DOM,"i create a xml document with JAXP and search a way to insert the schemalocation.
+At the moment my application produces:
+
+    <?xml version=""1.0"" encoding=""UTF-8""?>
+    <root>
+    ...
+    </root>
+
+But i need:
+
+    <?xml version=""1.0"" encoding=""UTF-8""?>
+    <root xmlns=""namespaceURL"" 
+    xmlns:xs=""http://www.w3.org/2001/XMLSchema-instance""
+    xs:schemaLocation=""namespaceURL pathToMySchema.xsd"">
+    ...
+    </root>
+
+My code:
+
+    StreamResult result = new StreamResult(writer);
+    Document doc = getDocument();
+
+    Transformer trans = transfac.newTransformer();
+    trans.setOutputProperty(OutputKeys.INDENT, ""yes"");
+    trans.setOutputProperty(OutputKeys.METHOD, ""xml"");
+    trans.setOutputProperty(OutputKeys.VERSION, ""1.0"");
+    trans.setOutputProperty(OutputKeys.ENCODING, ""UTF-8"");
+
+    DOMSource source = new DOMSource(depl.getAsElement(doc));
+    trans.transform(source, result);
+
+
+Thanks for your time,  
+Kasten",dom,xsd,jaxp,,,,open
+3311559,07/22/2010 17:21:54,406143,07/22/2010 16:58:20,1,0,Too many lookup tables ,"What are the adverse effects of having too many lookup tables in the database?
+
+ I have to incorportate too many Enumerations, based on the applications. 
+
+What would experts advice?",sql-server,database-design,enums,,,,open
+9990413,04/03/2012 09:18:39,851755,07/19/2011 10:22:40,4,1,What is this PHP code in VB.net,"I am looking for the vb.net equivalent of this function: I have no experience of PHP but came across this code which apparently gives you a random image url from google images 
+
+        function GetRandomImageURL($topic='', $min=0, $max=100)
+    {
+      // get random image from Google
+      if ($topic=='') $topic='image';
+      $ofs=mt_rand($min, $max);
+      $geturl='http://www.google.ca/images?q=' . $topic . '&start=' . $ofs . '&gbv=1';
+      $data=file_get_contents($geturl);
+     
+      $f1='<div id=""center_col"">';
+      $f2='<a href=""/imgres?imgurl=';
+      $f3='&amp;imgrefurl=';
+     
+      $pos1=strpos($data, $f1)+strlen($f1);
+      if ($pos1==FALSE) return FALSE;
+      $pos2=strpos($data, $f2, $pos1)+strlen($f2);
+      if ($pos2==FALSE) return FALSE;
+      $pos3=strpos($data, $f3, $pos2);
+      if ($pos3==FALSE) return FALSE;
+      return substr($data, $pos2, $pos3-$pos2);
+    }",php,vb.net,,,,04/15/2012 21:12:48,too localized
+10421966,05/02/2012 21:25:01,603588,02/04/2011 18:05:34,334,14,Spring-Data mongodb querying multiple classes stored in the same collection,"With Spring-Data, you can use the @Document annotation to specify which collection to save the object to.  Say i have two classes, Student and Teacher, both persisted into the people collection.  When I execute the following code:
+
+    mongo.find(new Query(), Teacher.class);
+
+result contains both Student and Teacher.  Looking in the data created by Spring-Data, each document contains a ""_class"" field which indicate which class it is persisted from.  
+
+This is field not used in find as an filter to return only Teacher?  How do I query if I only want to return Teacher saved in the people collection?",mongodb,spring-data,,,,,open
+8616154,12/23/2011 12:36:28,787158,06/07/2011 09:13:37,20,0,stop ajax function in midway when other element is clicked,"Hi have a page which has List data. 
+
+When I click on an element of the list, an Ajax function is called which populates some date in the right column.
+
+Now wat's working:-
+
+i click on element -> i see the loading.gif a few seconds -> data gets loaded.
+
+When i click on other element midway, the first function completes and only then the second request is taken.
+
+What I want:-
+
+when i click and the ajax is loading, I click again in between, the previous function should stop, and my new request should be taken. ",jquery,ajax,,,,,open
+1520973,10/05/2009 16:10:03,80229,03/19/2009 21:13:16,95,10,Regex to detect Javascript In a string,"I am trying to detect JavaScript in my querystrings value.
+
+I have the following c# code
+
+        private bool checkForXSS(string value) 
+        {
+            Regex regex = new Regex(@""/((\%3C)|<)[^\n]+((\%3E)|>)/I""); 
+
+            if (regex.Match(value).Success) return true; 
+            
+            return false; 
+        }
+
+This works for detecting `<script></script>` tags but unfortunately if there were no tags a match is not reached.
+
+Is it possible for a regex to match on JavaScript keywords and semi-colons etc?
+
+Thanks",regex,xss,c#,javascript,,,open
+5528942,04/03/2011 10:12:59,667355,03/19/2011 14:04:57,32,0,List of all .txt file,"I want to write a program that give a path in my system and goes to that path and search in that path and sub-directory of path and list all of .txt file . 
+please help me .
+thanks .",c++,c,qt,qt4,,04/07/2011 05:46:46,not a real question
+4344698,12/03/2010 10:37:44,447244,09/01/2010 09:10:05,1,0,I want to design an invitation card for my wedding in silverlight ,"I want to make an Application in Silverlight for invitation of marriage 
+
+Showing some Animation stuff",silverlight-4.0,,,,,01/08/2012 21:15:49,too localized
+7910832,10/27/2011 01:37:33,1015681,10/27/2011 01:28:41,1,0,VB Script To Delete Header and Footer plus Append Text while exporting to new text file,"Hi All VB Script Gurus,
+
+I am new to VB script world.
+
+I need some help on creating new VB script for the text file changes:
+
+I am receiving below sample text file data and needs to modify (append data) and export to new text file.
+
+OP01AMS06902APECS 20110905154741 2 T.M.FINAP033.00120110905034752 (header portion of the text file needs to validated and removed while exporting to new file)
+6301405159509 0000000700 20110504 110.00 USD 0000077191 US Auto Fo US Auto Fo 100000 ABC Fort Worth TX 76137
+6301405159509 0009000015 20110726 200.00 USD 0000077897OL00000001Vamsi Vamsi vamsi house 123 
+CL99AMS06902APECS 20110905154741 2 T.M.FINAP033.00120110905034752 (trailer portion of the file needs to validated and removed while exporting to new file)
+
+And while exporting to new file I need to append constant records data in each single row.
+
+For instance for the first above record apart of the existing data I need to append 58 constant record data for reach row.
+
+000001(constant) 0000000 (constant) 6301405159509 0000000700 20110504 110.00 USD 0000077191 US Auto Fo US Auto Fo 100000 ABC Fort Worth TX 76137
+
+All constants are fixed values with specifc length.
+
+Any help or sample scripts will be greatly appreciated.
+
+Thanks
+Shakee",vb,,,,,10/27/2011 03:24:58,too localized
+11610237,07/23/2012 09:56:46,1283414,03/21/2012 12:58:03,1,1,"In GEF bendpoints, how can i retrieve point from first and second dimension?","i have two dimensions, first (width, height) and second(width1, height1). how can i retrieve a Point(x,y) from dimensions???",eclipse-plugin,eclipse-rcp,,,,,open
+9131744,02/03/2012 16:12:22,1146408,01/12/2012 20:44:19,1,0,Is It Possible to Create CSV File with Multiple Tabs in Command Prompt?,"I'm looking to create a .csv file that can be opened in Excel that displays 2 tabs. However, the catch is that the script that I write has to be in a batch file (command prompt). I've seen a few ways to do this online, but they're all JAVA programs. I'm not sure about doing this in command prompt
+
+Is this even possible?",shell,command-line,csv,batch,,02/06/2012 18:30:34,off topic
+2047987,01/12/2010 09:50:14,27840,10/14/2008 13:22:02,79,5,How to write shellextension contextmenuitem in codegear c++ 2010,"I'm looking for some examples for writing a shell extension in codegear 2010 (2007 and 2009 would also probably be relevant) so I can rightclick a file in explorer and get the filepath in my vcl program.
+I have followed [this][1] tutorial but it's from 2001 and I have some trouble to get it to work. With that means I cant get it to call my methods (initialize , QueryContextMenu etc.).
+
+
+  [1]: http://edn.embarcadero.com/article/26650",codegear,shell-extensions,contextmenu,c++,c++builder,,open
+8341885,12/01/2011 13:05:51,416552,08/10/2010 19:51:11,251,3,How to add special character's like & > in xml file using java-script,"I am generating a xml code using java script, it works file if there is no special character in xml, otherwise it will generate message ""invalid xml"",
+
+I tried to **replace some special character's like 
+
+**xmlData=xmlData.replaceAll("">"",""&gt;"");
+xmlData=xmlData.replaceAll(""&"",""&amp;"");
+but it doesn't work.**
+
+for example:
+<category label='ARR Builders & Developers'>
+
+please reply me if anyone have some solution for this
+
+thanks",javascript,xml,,,,,open
+11200627,06/26/2012 04:05:14,1436488,06/05/2012 04:13:00,1,0,How VPN spliting Done in .Net Using C#,"I wants to use a certain browser or an application to send and receive traffic through VPN tunnel while the rest of the traffic is required to travel through the local ISP.
+
+
+Please Help me",c#,.net,vpn,,,06/27/2012 11:45:19,off topic
+6984871,08/08/2011 15:55:18,884395,08/08/2011 15:54:59,1,0,Cell colors in a GWT CellTable,"I'm using a CellTable and would like to programatically change the background color of certain cells in some situations. I tried it with an Custom Cell as described in the documentation and changed the background color with
+
+    sb.appendHtmlConstant (""<div style=\""background-color:blue;\"">"");
+    sb.append (safeValue);
+    sb.appendHtmlConstant (""</div>"");
+
+This basically works, but seems to be quite slow. Is there a better way to do this?",gwt,gwt-2.2-celltable,,,,,open
+8589517,12/21/2011 12:03:43,383731,07/05/2010 13:30:23,76,20,Sequential CSS3 animation,"I'm wondering if it is possible to fade in a list of items sequentially using CSS3 only?
+
+HTML would be something like this: 
+
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+
+        <li>item 6</li>
+        <li>item 7</li>
+        <li>item 8</li>
+        <li>item 9</li>
+        <li>item 10</li>
+
+        <li>item 11</li>
+        <li>item 12</li>
+        <li>item 13</li>
+        <li>item 14</li>
+        <li>item 15</li>
+    </ul>
+
+And when the UL gets the class ""fadeout"" it would be cool if first ""item1"" fades out (during 2 seconds) once this is finished fade out the next one(""item2"") and so on until all items are faded out.
+
+I know how to do this using jQuery but it would be nice if this was possible using CSS3 only? Any ideas if this could be possible?
+
+Thx! ",animation,css3,sequential,,,,open
+8784855,01/09/2012 06:55:00,281839,02/26/2010 06:30:28,407,3,can a strong name assambly be used only by a strongly name assambly?,"Can a strongly name assembly be used by a strongly name assembly ? I want to know if I signed an asambly as strongly named will it not possible to be used by a simple assambly ?  Please guide how to sign a assambly as strongly named ?
+
+thanks",c#,.net,visual-studio,visual-studio-2008,,01/09/2012 10:39:33,not a real question
+8548243,12/17/2011 22:06:37,224907,12/04/2009 16:31:42,244,21,ARC error: init methods must return a type related to the receiver type [4],"Whats wrong with this code under ARC? I get above error:
+
+    
+    - (Moment *)initMoment:(BOOL)insert {
+    
+    if (insert) {
+        self.moment = [NSEntityDescription insertNewObjectForEntityForName:@""Moment"" inManagedObjectContext:self.managedObjectContext];
+      } else {
+        self.moment = [NSEntityDescription insertNewObjectForEntityForName:@""Moment"" inManagedObjectContext:nil];
+      }
+    return self.moment;
+    }",ios5,initialization,arc,,,,open
+5182954,03/03/2011 15:40:40,512002,11/18/2010 10:56:50,81,5,Problem with deploying django application on mod_wsgi,"I seem to have a problem deploying django with mod_wsgi. In the past I've used mod_python but I want to make the change. I have been using Graham Dumpleton notes here [http://code.google.com/p/modwsgi/wiki/IntegrationWithDjango][1][1], but it still seem to not work. I get a Internal Server Error.
+
+
+`django.wsgi file:`
+
+    import os
+    import sys
+    
+    sys.path.append('/var/www/html')
+    sys.path.append('/var/www/html/c2duo_crm')
+    
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'c2duo_crm.settings'
+    import django.core.handlers.wsgi
+    application = django.core.handlers.wsgi.WSGIHandler()
+
+    WSGIScriptAlias / /var/www/html/c2duo_crm/apache/django.wsgi
+ 
+`Apache httpd file:`   
+
+    <Directory /var/www/html/c2duo_crm/apache>
+    Order allow,deny
+    Allow from all
+    </Directory>
+
+In my apache error log, it says I have this error This is not all of it, but I've got the most important part:
+
+    [Errno 13] Permission denied: '/.python-eggs'
+    [Thu Mar 03 14:59:25 2011] [error] [client 127.0.0.1]
+    [Thu Mar 03 14:59:25 2011] [error] [client 127.0.0.1] The Python egg cache directory is currently set to:
+    [Thu Mar 03 14:59:25 2011] [error] [client 127.0.0.1]
+    [Thu Mar 03 14:59:25 2011] [error] [client 127.0.0.1]   /.python-eggs
+    [Thu Mar 03 14:59:25 2011] [error] [client 127.0.0.1]
+    [Thu Mar 03 14:59:25 2011] [error] [client 127.0.0.1] Perhaps your account does not have write access to this directory?  You can
+    [Thu Mar 03 14:59:25 2011] [error] [client 127.0.0.1] change the cache directory by setting the PYTHON_EGG_CACHE environment
+    [Thu Mar 03 14:59:25 2011] [error] [client 127.0.0.1] variable to point to an accessible directory.
+
+ 
+
+
+  [1]: http://code.google.com/p/modwsgi/wiki/IntegrationWithDjango][1",python,django,apache,deployment,mod-wsgi,11/22/2011 07:59:36,off topic
+4306229,11/29/2010 17:21:26,78716,03/16/2009 18:47:42,880,55,How can a Windows Phone 7 application register for push service updates when the phone starts?,"I have a WP7 app and want it to register for push notifications when the phone starts up?
+
+Image I have some kind of messaging app, and don't want to force the user to click the tile to sign in and register for push notifications.
+
+Are there any events that happen on startup that would give me access to my application?
+
+I'm extremely lazy, and if I had a WP7 phone I wouldn't want to have to click on a ton of tiles just to log in if I have saved my credentials in isolated storage and had the ability to 'sign in when the phone starts'.",windows-phone-7,push-notification,,,,,open
+6508144,06/28/2011 14:32:56,486720,10/25/2010 17:26:57,313,1,On algrithms that minimizes maximal load of bins.,"There are $n$ bins and $m$ balls. Balls are with different weights, say ball $i$ has weight $w_i$. Is there an algorithm that assigns balls into $x<n$ bins so that maximal load of these bins is minimized.",algorithm,,,,,06/28/2011 14:43:26,off topic
+11157471,06/22/2012 13:48:15,575359,01/14/2011 07:31:37,69,0,Recursive Mogrify Script,"Another question from a newbie linux scripter. I'm trying to batch mogrify all the files in a folder using this command
+
+    find -name ""*.jpg"" -exec mogrify -resize 320 -quality 75 {} \;
+
+The command runs but nothing seems to happen.
+
+Thanks in advance",linux,mogrify,,,,06/22/2012 23:46:28,too localized
+7852524,10/21/2011 16:38:39,478252,10/17/2010 00:21:46,370,26,Get the values of selected checkboxes from an asp checkboxlist in jquery,"I am trying to get the selected value (or values) of the checkboxlist.  My problem is that I am binding the checkboxlist in c# and it's not rendering with the ""Value"" attribute as it would if I were to hard code the 
+
+    <asp:ListItem Value="".."" .. />
+
+My checkboxlist looks like this:
+
+    <asp:CheckBoxList runat=""sever"" ID=""cblStuff"" DataValueField=""myID"" DataTextField=""myName""></asp:CheckBoxList>
+
+So when I try to use jquery and do the follow, it returns only ""on"" as apposed to ""myID"".  Am I missing something? I was under the impression that is what the DataValueField was for?
+Here is the js I am using:
+
+    $(""checkboxlist selector"").change(function() {
+          $(this).find("":checked"").each(function() { alert($(this).val()); });
+    });
+
+Thanks.
+
+ ",c#,jquery,asp.net,checkboxlist,,,open
+11330139,07/04/2012 13:32:14,1501640,07/04/2012 12:59:30,1,0,Facebook sharing and image size issue,"I share link from my website to my Facebook page but the image of the post not resize correct for Fb wall.
+<br>
+<br>
+Image on FB wall: http://tinypic.com/r/24g59pz/6
+<br>
+Image on My website: http://tinypic.com/r/14iiywh/6
+<br>
+<br>
+Any ideas how I can fix that?",facebook,,,,,07/05/2012 10:42:33,not a real question
+10912452,06/06/2012 10:30:12,1439488,06/06/2012 10:24:28,1,0,Micro Cloud Foundry Sinatra Hello world application fails to upload - JSON error,"I'm just trying to get started with CloudFoundry and am attempting to upload the sample Hello World sinatra app. It fails with a JSON 413 error as follows:
+
+
+*Would you like to deploy from the current directory? [Yn]: y  
+Pushing application 'hello'...  
+Creating Application: OK  
+Uploading Application:  
+ Checking for available resources: OK  
+Processing resources: OK  
+Packing application: OK  
+Uploading (1009M): OK  
+Error (JSON 413): <html>  
+<head><title>413 Reques...*  
+
+
+I think this is something to do with the package being too large, the above output seems to suggest it's 1009M!?
+
+Any thoughts on what might be going wrong here?
+
+Cheers,
+",json,cloudfoundry,,,,,open
+2037737,01/10/2010 17:05:40,217360,11/23/2009 21:21:48,18,3,What views can i use in an appWidget?,"Can anyone tell me what views can I use in an appWidget?
+
+ Thank you!
+",android,,,,,,open
+7489468,09/20/2011 17:50:25,448864,07/20/2010 18:48:02,78,1,Android SDK onCreate problem,"I think I've gotten myself seriously confused.  Up until recently my app was working great.  I hadn't changed anything except updated java and android tools.  I'm not sure if that caused my problem or what, that's all I can remember changing related to it.
+
+Here's the problem I'm running into, which just started.
+
+Debug mode (installed app on phone through Eclipse):
+
+1. Tap app icon to open app, onCreate is called
+2. Hit home button, state is saved
+3. Tap app icon to open app, it resumes, onCreate is not called
+
+That worked, my app is happy.
+
+Now I export the signed and zip aligned app, remove the app on my phone, install the new one, and repeat these steps:
+
+1. Tap app icon to open app, onCreate is called
+2. Hit home button, state is saved
+3. Tap app icon to open app, onCreate is called again
+
+Ugg, onCreate is called again? Bundle is null, my variables reset. This happens on the emulator too and for other users of the app.  I can hold the home button down and switch to it and it continue where it left off but if I tap the icon it calls onCreate every single time.
+
+Why is this happening?  My app is a single activity.",android,,,,,,open
+7039786,08/12/2011 12:01:53,312896,04/09/2010 14:51:11,6,1,"How i can organize my class members, to prevent coping everytime object asked for it","suppose i have class
+
+    class Pick
+    {
+    public:
+    	D3DXVECTOR3 pos;
+    	D3DXMATRIX transformation;
+    };
+Is that good, or better do as a properties with getters and setters. But code will hardly use these members. So how i can realize functions like
+[GetTransform][1] and [SetTransform][2]. How Microsoft did it?
+
+
+  [1]: http://msdn.microsoft.com/en-us/library/bb174255%28v=vs.85%29.aspx
+  [2]: http://msdn.microsoft.com/en-us/library/bb174258%28v=vs.85%29.aspx",c++,oop,,,,08/12/2011 12:19:46,not a real question
+4563508,12/30/2010 14:46:09,233428,12/17/2009 00:53:22,367,3,Decode base64 data as array in Python,"I'm using this handy Javascript function to decode a base64 string and get an array in return.
+
+This is the string:
+
+    base64_decode_array('6gAAAOsAAADsAAAACAEAAAkBAAAKAQAAJgEAACcBAAAoAQAA')
+
+This is what's returned:
+
+    234,0,0,0,235,0,0,0,236,0,0,0,8,1,0,0,9,1,0,0,10,1,0,0,38,1,0,0,39,1,0,0,40,1,0,0
+
+The problem is I don't really understand the javascript function:
+
+    var base64chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'.split("""");
+    var base64inv = {}; 
+    for (var i = 0; i < base64chars.length; i++) { 
+      base64inv[base64chars[i]] = i; 
+    }
+    function base64_decode_array (s)
+    {
+      // remove/ignore any characters not in the base64 characters list
+      //  or the pad character -- particularly newlines
+      s = s.replace(new RegExp('[^'+base64chars.join("""")+'=]', 'g'), """");
+     
+      // replace any incoming padding with a zero pad (the 'A' character is zero)
+      var p = (s.charAt(s.length-1) == '=' ? 
+              (s.charAt(s.length-2) == '=' ? 'AA' : 'A') : """"); 
+      
+      var r = [];
+      
+      s = s.substr(0, s.length - p.length) + p;
+     
+      // increment over the length of this encrypted string, four characters at a time
+      for (var c = 0; c < s.length; c += 4) {
+     
+        // each of these four characters represents a 6-bit index in the base64 characters list
+        //  which, when concatenated, will give the 24-bit number for the original 3 characters
+        var n = (base64inv[s.charAt(c)] << 18) + (base64inv[s.charAt(c+1)] << 12) +
+                (base64inv[s.charAt(c+2)] << 6) + base64inv[s.charAt(c+3)];
+    
+     
+        // split the 24-bit number into the original three 8-bit (ASCII) characters
+        r.push((n >>> 16) & 255);
+        r.push((n >>> 8) & 255);
+        r.push(n & 255);
+        
+    
+      }
+       // remove any zero pad that was added to make this a multiple of 24 bits
+      return r;
+    }
+
+What's the function of those ""<<<"" and "">>>"" characters.
+Or is there a function like this for Python?",javascript,python,arrays,base64,decode,,open
+4016043,10/25/2010 15:21:15,165059,08/28/2009 19:14:29,3065,117,High profile MonoTouch apps?,"I would like some examples of high profile apps created using MonoTouch. The apps you call home about. The apps that made it to the top 25 lists in their category.
+
+Where can I find examples of such applications?",iphone,app-store,monotouch,,,10/26/2010 00:28:35,off topic
+4258329,11/23/2010 16:29:33,431864,08/26/2010 13:15:11,1,0,Cakephp Routing,"I want that users can surf to http://www.yyy.com/xxx for xxx being a parameter. and so with www.yyy.com/xxx/zzz . I have following routing which works fine:
+
+Router::connect('/:town', array('controller'=>'places', 'action'=>'index'), array('pass' => array('town')));
+Router::connect('/:town/:category', array('controller'=>'places', 'action'=>'index'), array('pass' => array('town', 'category')));
+
+But when I want tot surf to a different controller example www.yyy.com/differentcontroller/add it goes back to the places controller unless I make a routing for it...
+
+any ideas?
+
+
+",php,routing,cakephp-1.3,,,,open
+10438796,05/03/2012 20:23:23,1206542,02/13/2012 10:21:49,55,1,Make input in program input value at website,"I want a function in my JavaFX 2.0 program that takes user input and forwards it to a websites textfield, and then get the value the website returns. The website would be a site to check if the warranty for a spesific program is valid.
+
+All the user would need to input is reg. ID and maybe program brand.
+
+I'm just looking for ideas on how to do this, links or even code would be superb. I suspect it won't require that much code, but hey.. i've been surprised before!
+
+Thanks! :)",java,input,website,,,,open
+560663,02/18/2009 11:23:33,25804,10/07/2008 12:52:38,79,11,Include an attribute of an unrelated element in an XPath,"I have the following XML file:
+
+    <phonebook>
+    	<departments>
+    		<department id=""1"" parent="""" title=""Rabit Hole"" address="""" email="""" index=""""/>
+    		<department id=""2"" parent="""" title=""Big Pond"" address="""" email="""" index=""""/>
+    	</departments>
+    	<employees>
+    		<employee id=""1"" fname=""Daffy"" lname=""Duck"" title=""Admin"" email=""daffy.duck@example.com"" department=""2"" room="""" />
+    		<employee id=""2"" fname=""Bugs"" lname=""Bunny"" title=""Programmer"" email=""bugs.bunny@example.com"" department=""1"" room="""" />
+    	</employees>
+    </phonebook>
+
+
+When displaying it, I want to show the contact details for an employee as well as the title of the department where he works. Here's what I've got in the template:
+
+    <xsl:for-each select=""phonebook/employees/employee"">
+    	<xsl:sort select=""@lname"" />
+    	<tr>
+    		<td>
+    			<span class=""lname""><xsl:value-of select=""@lname""/></span>
+    			<xsl:text> </xsl:text>
+    			<span class=""fname""><xsl:value-of select=""@fname""/></span>
+    		</td>
+    		<td><xsl:value-of select=""@title""/></td>
+    		<td>
+    			<xsl:value-of select=""/phonebook/departments/department[@id='{@department}']/@title""/>
+    		</td>
+    		<td><a href=""mailto:{@email}""><xsl:value-of select=""@email""/></a></td>
+    	</tr>
+    </xsl:for-each>
+
+The problem is that the following rule doesn't seem to work:
+
+    <xsl:value-of select=""/phonebook/departments/department[@id='{@department}']/@title""/>
+
+I guess this is because the XSLT engine looks for the `department` property in the `department` element, and not in the `employee` element. However, I don't have an idea how to fix it. Could anyone give me a hint on that?",xslt,xpath,,,,,open
+7733587,10/11/2011 23:09:39,645924,11/27/2010 20:01:40,470,3,can you create one div to flow over others like ijn the image bellow,"black is the browser window in the image bellow.
+I want to accomplish the image in the right
+I have a div which is centered (blue) and has a fixed width
+I have a div which is inside (red)
+
+I want the red div to span from one side of the screen to the other while still aligning all else in the center.
+
+How should I do this?
+Should I break it in 3 divs(first fixed and centered, the second to span all width, the third like the first)
+![enter image description here][1]
+
+
+  [1]: http://i.stack.imgur.com/cZP0U.png",html,div,,,,,open
+6880908,07/30/2011 03:31:26,535103,12/08/2010 14:28:08,126,0,Recommendation for ATI OpenCL GPGPU card,"I first got into GPGPU with my (now aging) NVidia 9800GT 512MB via CUDA.  It seems these days my GPU just doesn't cut it and I've heard that ATI blows NVidia out of the water for GPGPU these days (correct me if I'm wrong).  
+
+I'm specifically interested in OpenCL, as opposed to CUDA or StreamSDK, though some info on whether either of these are still worth pursuing would be nice.
+
+My budget is around 150 GBP plus/minus 50 GBP.  I'm a little out of the loop on which GPUs are best for scientific computing (specifically fluid simulation and 3D medical image processing).  
+
+I'd also be interested to hear any suggestions on games that make use of GPGPU capabilities, but that's a minor issue next to the potential for scientific computing.
+
+I'm also a little lost when it comes to evaluating the pros/cons of memory speed vs. clock speed vs. memory capacity, etc, so any info with regard to these more technical aspects would be most appreciated.
+
+Cheers.",cuda,opencl,gpgpu,nvidia,ati,07/30/2011 11:36:46,not constructive
+576400,02/23/2009 02:57:36,44996,12/10/2008 14:10:29,387,8,What's the best way to diff two database backup files with MS Sql Server 2005?,"I have two database backup files. I would like to know if there is any difference between the two. I could go row by row, field by field and do a diff (I'm not looking for differences in schema but rather data, although I expect the schema to remain the same).
+
+Can I run some sort of checksum on the files, or do I have to go through the data itself to be 100% certain?",sql-server,sql-server-2005,,,,,open
+10461033,05/05/2012 10:36:29,1362858,04/28/2012 12:27:25,3,0,mysql_real_escape_string replace with Regex Code?,"i need the RegEx Code for ""PAWN"".
+You can imagine that, i need a Code which i can use with preg_replace, too. *( if you dont know what pawn is )*
+
+Also what i use, is worse...
+
+So, my Code is.
+
+    $text = preg_replace('/([\\\\\|\'|""])/', '\\\$1', $text);
+
+Is this right?
+This Code would replace the in PHP Documentation given Charakters etc.
+But it replace all \ :/ \n etc., too!
+
+**Have you a Code, which only replaces the following Charakters?**
+http://de3.php.net/manual/de/function.mysql-real-escape-string.php
+
+\x00, \n, \r, \, ', "" und \x1a",php,regex,escaping,preg-replace,mysql-real-escape-string,05/16/2012 12:34:08,not a real question
+7957859,10/31/2011 18:15:23,1022460,10/31/2011 18:05:40,1,0,"How to make a scrollbar, slider bar, something like that (android)","I am not good at English. It's probably why I can't get the answer in Google. What I want is just an horizontal bar for selecting number in a range. But Google keeps showing me the scrollbar of view, layout etc.
+
+Is there any tutorial? Am I searching with a wrong keyword?",android,scrollbar,,,,11/02/2011 05:53:15,too localized
+7332396,09/07/2011 10:31:42,65403,02/12/2009 04:47:24,323,3,How to use BackgroundWorker in Linq?,"do you have any suggestion or idea how to use BackGroundWorker in Linq to Sql to retrieve data from a database ?
+
+Thanks so much for your attention,
+
+Cheers",linq-to-sql,c#-4.0,,,,09/07/2011 13:12:12,not a real question
+9340000,02/18/2012 09:11:25,990772,10/12/2011 05:13:36,94,6,How to specify and make use of header files for verilog language while using exuberant ctags with emacs,"I have recently started using exuberant ctags and emacs for verilog & system verilog coding and code browsing. I currently generate the tags using the command
+
+    ctags -e -R --tag-relative=yes --langmap=verilog:.v.vh.sv.svh 
+
+My code contains a lot of `define macros which are all specified in certain header files with extension "".vh"" & "".svh"". For e.g. a header file named **foo.vh** has the following code
+
+    `define WIDTH_ADDRESS 32;
+
+and a file **top.v** invokes the macro as follows
+
+    input [`WIDTH_ADDRESS - 1 : 0] InAddress;
+
+While browsing the **top.v** file using emacs, is there any way by which I can jump directly to to the macro definition in the **foo.vh** file?
+
+I have been using `M-x tags-search <RET> WIDTH_ADDRESS <RET>` for sometime now but it jumps to quite a few other instances of `WIDTH_ADDRESS in other files before reaching the foo.vh file.
+
+After some research I did see an option to specify header files using `-h` option with ctags during tags generation. However I could not get it to work and I guess there was some syntactical error from my part.
+
+First of all are there any notable benefits of specifying a header file using `-h` option? If so, what is the correct syntax to specify header files? Also can I specify emacs to look into these header files first (files with extension "".vh"" &"".svh"")  before parsing other files (with extension "".v"" & "".sv"")",emacs,verilog,ctags,system-verilog,exuberant-ctags,,open
+557229,02/17/2009 15:03:33,54964,01/14/2009 11:38:17,508,5,Conditional bash search?,"How can I make such a conditional search in Bash like in Google
+
+    ""python"" imag
+
+The word **python** must be in the search, while the word **imag** aims to match at least image and imaging.
+
+I want to search a python module for images, perhaps in apt-get.
+ ",search,bash,,,,,open
+7974959,11/02/2011 01:49:32,1021270,10/31/2011 01:18:22,11,0,Python: create dict from list and auto-gen/increment the keys (list is the actual key values)?,"i've searched pretty hard and cant find a question that exactly pertains to what i want to..
+
+I have a file called ""words"" that has about 1000 lines of random A-Z sorted words...
+
+    10th
+    1st
+    2nd
+    3rd
+    4th
+    5th
+    6th
+    7th
+    8th
+    9th
+    a
+    AAA
+    AAAS
+    Aarhus
+    Aaron
+    AAU
+    ABA
+    Ababa
+    aback
+    abacus
+    abalone
+    abandon
+    abase
+    abash
+    abate
+    abater
+    abbas
+    abbe
+    abbey
+    abbot
+    Abbott
+    abbreviate
+    abc
+    abdicate
+    abdomen
+    abdominal
+    abduct
+    Abe
+    abed
+    Abel
+    Abelian
+
+I am trying to load this file into a dictionary, where using the word are the key values and the keys are actually auto-gen/auto-incremented for each word 
+
+e.g {0:10th, 1:1st, 2:2nd} ...etc..etc...
+
+below is the code i've hobbled together so far, it seems to *sort of* works but its only showing me the last entry in the file as the only dict pair element
+
+    f3data = open('words')
+    
+    mydict = {}
+    
+    for line in f3data:
+        print line.strip()
+        cmyline = line.split()
+        key = +1
+        mydict [key] = cmyline
+       
+    print mydict",python,file-io,dictionary,,,,open
+9064842,01/30/2012 13:47:17,146366,07/28/2009 12:14:46,535,26,Best SVN repository creation software?,"We were using Indefero for a while, but it wasn't doing the trick. I just need an online management tool with which I can create repos and users, and assign them, so I can check them out on my local machine. 
+
+How does everyone else do it?",svn,,,,,01/31/2012 04:41:30,not constructive
+10689684,05/21/2012 17:22:03,1408429,05/21/2012 17:03:12,1,0,RandomLine + imagettftext,"Do you guys know how to cut text in RandomLine?
+This is for facebook application.
+
+I have:
+In the powod.txt I have:
+Najkrótszy dowcip informatyczny?<br> Winrar.rar
+
+In main php file:
+
+
+$reason = RandomLine(""powod.txt"");  
+
+imagettftext( $canvas, 20, 8, 160, 280, $black, $font, $reason ); 
+
+<br> is not working in text file.
+
+Do you know how to fix it?",php,,,,,,open
+9942016,03/30/2012 11:25:05,1197249,02/08/2012 13:13:30,310,0,Using AtomicInteger safely to check first,"How can I do ""check-then-act"" in an `AtomicInteger` variable?  
+I.e. what is the most safe/best way to check the value of such a variable first and inc/dec depending on result?   
+E.g. (in high level)  
+`if(count < VALUE) count++;` //atomically using `AtomicInteger`",java,multithreading,concurrency,atomic,,,open
+10942255,06/08/2012 02:08:10,1004573,10/20/2011 06:14:46,20,0,Tiny MCE Multiple Instances Submit Trigger Save Problems,"Hi guys I have a problem with Tiny MCE's plugin at the moment.
+
+I have a form where I have multiple instances of Tiny MCE Editors and I need to save the text that is in it. Originally, what happened was that my form would not submit the data in the TinyMCE editors. I have searched up forums and one solution suggested was that I perform tinyMCE.triggerSave() on submit.
+
+I have put that code as in below, however, it still does not do what I expected to do, that is taking what I entered in the data and submitting those with the form submisson.
+
+    $('form').live('submit', function(e){
+       // a tiny MCE field exists
+        if($('.tinymce').get(0)){
+            alert('Triggering Save....');
+            tinyMCE.triggerSave();
+            alert('Triggered Save! :)');
+        }
+    });
+
+My question is what other solutions are out there to solve this problem, and If it can't be solved by tinyMCE, is there another editor plugin that will support multiple instances and submit those values on submit.
+
+Any answers will be appreciated.
+Thanks guys.",javascript,tinymce,form-submit,multiple-instances,,,open
+1749287,11/17/2009 14:32:00,136281,07/10/2009 13:29:55,14,0,how linux run  different microprocessors,"  how linux run different processors, linux kernal compiled using corresponing  compilers,so it run different micprocessors like intel, Sun sparc,MIPS?",linux,,,,,11/17/2009 14:36:19,not a real question
+419776,01/07/2009 09:53:01,45603,08/25/2008 09:52:34,920,43,Modal operation using IMessageFilter and DoEvents,"This is a Windows Forms application. I have a function which captures some mouse events modally till a condition is met. For example, I would like to wait for the user to select a point in the window's client area (or optionally cancel the operation using the Escape key) before the function returns. I am using the following structure:
+
+    Application::AddMessageFilter(someFilter);
+    while(someFilter->HasUserSelectedAPoint_Or_HitEscapeKey()){
+       Application::DoEvents();
+    }
+    Application::RemoveMessageFilter(someFilter);
+
+This works quite nicely except for taking up nearly 100% CPU usage when control enters the while loop.
+
+What is the right way to use `IMessageFilter`? How do I surrender control to the OS till a message is received? Any `GetMessage` equivalent in the managed world?",winforms,winapi,windows,gui,,,open
+9519663,03/01/2012 16:08:45,1136594,01/08/2012 01:08:48,52,0,javascript dateTime - the same format as server,"I have an ajax call, which returns datetime. Javascript displays it using client timezone. I not need in any client timezone, I want to show datetime the same as server return. Is it possible?
+
+I get date via:
+
+    var d = eval('new' + date.replace(/\//g, ' '));",javascript,datetime,,,,,open
+10593281,05/15/2012 01:58:06,775602,05/30/2011 01:00:50,97,6,Html 5 vs other technologies,"I have been reading a lot of stuff about HTML 5 recently. Something still looks very fuzzy to me and I hope somebody can help me understand it better.
+
+Is HTML 5 for the ""technology"" to create the UI only? If I need to create an application to access bank accounts, how is it possible that HTML 5 will replace all other technologies? I mean there must be some kind of web service that the application has to use to access the data on the server and I can't see how that piece can be done with HTML 5.
+",html5,,,,,05/18/2012 17:15:30,not constructive
+11709753,07/29/2012 13:49:53,1494342,07/01/2012 14:12:11,1,0,how to save an NSInteger in NSUserDefaults,"I am trying to save an NSInteger (label) into NSUserDefaults but I have not found a way to do this is it even possibel
+
+Saving the data
+
+    [[NSUserDefaults standardUserDefaults] setInteger:label forKey:@""key1""];
+
+Retrieving the data
+
+    - (void)viewDidLoad {
+	label = [[NSUserDefaults standardUserDefaults] integerForKey:@""key1""];
+    [super viewDidLoad];",c++,objective-c,xcode,nsuserdefaults,nsinteger,07/30/2012 14:37:14,not a real question
+9198866,02/08/2012 17:59:37,660668,03/15/2011 13:41:36,68,1,Merging data between 2 separate Oracle databases,"I've got two separate, unconnected and unconnectable Oracle databases. I need to get information from one to the other as quickly and painlessly as possible.
+
+Typically what I've done up until now when in this situation is create a staging area for the data that needs to be imported (essentially a temporary table just for storing the data until I'm done merging). I copy _all_ of the data that _might_ be needed from the source to that staging area. Then I merge the data as I would if the two tables were connected, meaning of course that I can filter out whatever data I don't need at that time.
+
+Here's the problem in my current case. The source table is _extremely_ large and entirely _un-indexed_ (something over which I have no control, ugh). That means it takes **forever** to get the necessary data if I don't filter it in some way. In addition the destination table really only needs a relatively small subset of the data to do what it needs to do, maybe ten thousand or so distinct rows at a time. In this case I don't want to copy _all_ of the data that _might_ be needed. I just want to copy over the _exact_ data that will be needed, or as close to that as possible.
+
+**tl:dr version**
+
+**Exactly how do I limit my select on the source table based on what I need in the destination table if they can't communicate with each other?**
+
+For example, I might select ID's for the data that is needed in the destination and build the query for the source table based on that. However, that might result in a query with many thousands of OR clauses in it:
+
+    SELECT x, y FROM z WHERE (ID = 1 OR ID = 2 ... OR ID = 10000 OR ID = 10001...)
+
+Or something like that. Is there a better way of doing it?",database,oracle,query,,,,open
+7939739,10/29/2011 15:16:51,871202,07/31/2011 02:04:31,293,2,What really is a PNG?,"So I asked this question earlier:
+
+http://stackoverflow.com/questions/7937068/css-box-shadow-not-truly-transparent
+
+And I realize that I do not really know what a .png file is. .bmps are just uncompressed bitmaps, .jpgs are bitmaps compressed using the special jpeg algorithm, and I thought .pngs were just bitmaps compressed losslessly using some special png algorithm.
+
+However, it turns out .pngs can be indexed colors like gifs (still losslessly?) and Adobe Fireworks can make special ""Fireworks PNG""s which are editable, letting the user drag and drop stuff around the image a.l.a. MS Word document but still allowing them to be readable by ""standard"" image processing stuff (browsers, paint.net, etc.) as a normal .png.
+
+What gives? Clearly there is way more to the .png format than just losslessly compressed bitmaps.",image,compression,png,format,fireworks,11/12/2011 19:04:15,off topic
+4653118,01/11/2011 00:44:10,460025,09/27/2010 23:07:53,1,0,hidden iframe issue with iphone safari,"Safari iphone/ipad doesn't honor 0px for width and height on an iframe and puts a big one.
+
+Has anyone seen that or found a fix other than setting display to none since 0px seems to work on all the browsers.
+
+",javascript,html,,,,,open
+4794520,01/25/2011 14:19:34,588855,08/06/2010 17:52:56,142,1,Multiple inheritance in C++,"As you know, C++ allows `multiple inheritance`. But, would it be a good programming approach to use multiple inheritance or it should be avoided?
+
+Thanks.",c++,multiple-inheritance,,,,01/25/2011 14:22:50,not a real question
+10608886,05/15/2012 21:07:14,359862,06/06/2010 19:55:32,3852,47,2 simple regex questions,"**Question 1.**
+
+
+    String matchedKey = ""sessions.0.something.else"";
+    Pattern newP = Pattern.compile(""sessions\\.([^\\.]+)(\\..+)"");
+    m = newP.matcher(matchedKey);
+    
+    System.out.println(m.group(1)); // has nothing. Why?
+
+    sessions\\. // word ""sessions"" followed by .
+    ([^\\.]+)   // followed by something that is not a literal . at least once
+    (\\..+)     // followed by literal . and anything at least once
+
+I would have expected for m.group(1) to be 0
+
+**Question 2**
+
+    String mask = ""sessions.{env}"";
+    String maskRegex = mask.replace(""."", ""\\\\."").replace(""env"", ""(.+)"")
+                                       .replace(""{"", """").replace(""}"", """");
+    // produces mask ""sessions\\.(.+))""
+
+When used as 
+
+    Pattern newP = Pattern.compile(""sessions\\.(.+))""); // matches  matchedKey (above)
+    Pattern newP = Pattern.compile(maskRegex);          // does not match matchedKey (above)
+
+Why is that?",java,regex,,,,,open
+9637702,03/09/2012 16:38:39,1259730,03/09/2012 16:28:47,1,0,how do i send variables from form to form in C#,"i need help.
+how do i send variables from form1 to form2.   
+i need to send two strings and one int from form1   
+to form2 and then use them in three separate textboxses 
+
+im a biginner so keep it simple
+ 
+thanks for the help.",c#,forms,,,,03/10/2012 17:42:04,not a real question
+5119781,02/25/2011 16:28:46,472677,10/11/2010 20:50:32,1,1,Audio Stream URLs and Problem Solving Stream URLs,"I thought I would share what I went through. This is not a question.  We solved a problem.  I’m sure old media server hounds know about this.  I didn’t.  I hope this saves you time in the future.
+
+Problem: My customer’s Shoutcast listing went away but their provider didn’t. (Shoutcast has listings for many stations as a convenience.  My customer’s used to be: 
+http: //yp.shoutcast.com/sbin/tunein-station.pls?id=3012xxx and then it went away!  Their station didn’t.
+
+We were left with several URLs provided us by the station and none of them played via our player.  Within each .pls, .ram file, the same URL was listed (see note) - something like this:
+
+http: //74.53.186.162:9082/
+
+How did we solve the problem?
+
+On the Shoutcast console page above, there is a listen link.  It refers to a URL with a .pls extension.  It also shows the sample rate, number of current listeners, etc.  The URL worked. 
+
+What made this interesting is that file located at that URL actually was a .pls text file with the original URL (something like http: //74.53.186.162:9082/) !
+
+What did I learn?
+
+1. Shoutcast servers know what kind of client is accessing their data.  I would assume the same to be true of IceCast servers.  How did I know?  The circular URL reference.  This means that your player parses text files first much like your browser looks at the mime type.
+2. Media player classes that you use in code can be really dumb.  They’re sensitive to mime types, bit rates, extension names, etc.
+3. If I have the .pls or other media file, I can use them locally.
+4. Hard coded IP addresses are just as bad as they ever were.  Unfortunately, developers don’t have much control over this.
+
+Note: Audio Streams with .pls, .ram, etc are text files that have URLs in them to the actual stream.  The text file has other meta data as well.  If you take the raw URL from the txt file and launch it, you might get a Shoutcast Server interface that gives you stream information that your player might use.  (When viewing a radio station’s website, you can sometimes find the stream URL in the player’s launch parms.  Sometimes they can be different.)",java,android,,,,06/27/2011 17:13:22,not a real question
+8015535,11/04/2011 20:47:20,521818,11/26/2010 21:47:55,21,0,"Ruby Dynamic Classes. How to fix ""warning: class variable access from toplevel""","I'm trying to write a program that dynamically defines ruby classes based on configuration read from a file. I know I can use Class.new to do this. Here's an example program:
+
+<pre><code>x = [1,2,3]
+
+Test = Class.new do
+  @@mylist = x
+
+  def foo
+    puts @@mylist
+  end
+end
+
+Test.new.foo
+</code></pre>
+
+When I run this I get the following output:
+
+<pre><code>c:/utils/test.rb:4: warning: class variable access from toplevel
+c:/utils/test.rb:7: warning: class variable access from toplevel
+1
+2
+3</code></pre>
+
+Does anyone know what causes these warnings and how I can get rid of them?
+
+Thanks in advance!",ruby,oop,dynamic,,,,open
+5131732,02/27/2011 06:03:46,636212,02/27/2011 06:03:46,1,0,Infrastructure for high transactional system (language & hosting suggestion help),"Some of our friends (University students) are trying to develop a twitter type application, I want to plan for at least 1000 transactions per second (I know it's wishful thinking) for initial launch. This involves several people connecting and getting updates and posting (text + images) to site. In the back end db will server the data and also calculates rankings of what to push to user based on complex algorithm on the fly real-time.
+
+Our group is familiar with Java and Tomcat/MySQL. We can also easily learn/code in PHP/MySQL. What is the best suited platform for our purpose ? 
+
+Though Java seem to be easy to implement for us I am afraid that hosting will be a bit difficult. I could find cloud based php hosting services (like rackspace cloudsites) at reasonable cost. Amazon EC2 is a bit over our heads to manage on day-to-day.
+
+Also any recommendation on hosting ? (PHP or Java) We don't have millions in seed money but about $20K to start with.
+
+Any advice on above or any thing in general approach is much appreciated.",java,php,hosting,startup,,02/27/2011 09:00:09,not a real question
+3897693,10/09/2010 20:11:09,229535,12/11/2009 10:31:49,1598,49,Which tournament managment software for web-based tournaments?,"This is possibly borderline for stackoverflow, as it's not a direct programming question. But, I am looking for a suitable software as a starting point from which to continue programming my desired customizations, so I hope it's close enough.
+
+Here are the requirements, for which I am looking for in a web-based tournament management software:
+
+- Customizable: open-source would be perfect, otherwise at least needs to support plug-ins to support different kinds of sports/games/results/etc.
+- Authentication: support for authenticated users that can be related to different tournaments as well as teams
+- Runs mostly non-supervised: as the tournaments are web-based I'd like to give contestants the possibility to sign-up themselves (based on authentication system to reduce the spamming problem) and report results themselves. Result reports vary dramatically based on the actual tournament, hence, may require some result determination plug-ins. The goal is to reduce the required manual effort by administrators.
+- Web interface: I am not interested in off-line tournament management software
+- Active: If in any way possible I'd like to build upon software that is maintained and/or in active development
+
+Some optional nice-to-have features would be:
+
+- automatic bracket generation with selectable algorithms (round-robin, KO system, etc)
+- visualizations (mainly brackets)
+- statistics
+
+
+
+
+I am asking this question after a few hours of researching alternatives I could find. I will list the tools here that I found and what is wrong with them for my purposes. Please feel free to help me improve my google-fu, or point out if I have overlooked something in my evaluations.
+
+- open tournament system: looks roughly like what I had in mind, but never seems to have taken off and is unmaintained for almost half a decade now
+- KMleague: also sounds nice, but doesn't appear to be maintained anymore (I couldn't get access to their forums for more information either. Never received the activation e-mail.) Maybe someone here knows it and whether it's worthwhile to check out the code as a starting point.
+- In this [SO thread][1] I found Tourney logic and TournamentAPI, which both require off-line management of the tournaments. Additionally, the first is commercial and the latter hasn't released anything yet.
+
+Several commercial products I quickly dismissed for their lack of customizability (most are strictly limited to a certain sport/game) and because all I came across where again off-line managed.
+
+
+  [1]: http://stackoverflow.com/questions/1527185/any-tournament-apis-out-there",web-applications,tournament,language-agnostic,,,01/29/2012 16:10:00,not constructive
+9520501,03/01/2012 16:55:08,897059,08/16/2011 16:05:00,74,9,How do you get the past tense of a verb?,"How do you get the past tense of a verb without using memory heavy NLP frameworks?
+
+e.g. 
+
+live to: lived
+
+try to: tried
+
+tap to: tapped
+
+boil to: boiled
+
+
+edit: I wrote something myself (stack overflow won't let me self answer) which seems to work: http://pastebin.com/yQCDDaz4",java,nlp,,,,03/02/2012 17:27:03,not constructive
+8608937,12/22/2011 19:43:33,763600,05/21/2011 02:34:42,385,4,Objective-C: basic memory management. Ownership of object?,"I am looking through the Advanced Memory Management Programming Guide of Apple available at
+http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmRules.html#//apple_ref/doc/uid/20000994-BAJHFBGH
+
+For the following code:
+
+      - (NSString *)fullName {
+    NSString *string = [NSString stringWithFormat:@""%@ %@"",
+                                 self.firstName, self.lastName];
+    return string;
+     }
+
+
+""Following the basic rules, you don’t own the string returned by stringWithFormat:, so you can safely return the string from the method."", (therefore, do not have to release it) - the guide
+
+Basic rule from another part of the guide: ""You create an object using a method whose name begins with “alloc”, “new”, “copy”, or “mutableCopy”"", (this makes you the owner)
+
+
+So, who own the string?
+
+Thanks",objective-c,memory-management,,,,,open
+140680,09/26/2008 17:00:19,13009,09/16/2008 16:37:56,197,9,Firebug - Run multiline scripts on console or make new javascript file,"Is there a way in FireBug to start a new script file to apply to page?  Basically I want to do work like I'd normally do on the firebug console but be able to to paste in multi-line functionss, etc.  It doesn't seem like the console is amenable to that.",javascript,firebug,firefox,,,,open
+6375378,06/16/2011 16:33:31,492516,10/31/2010 01:39:53,1,0,"Better choice: TextLayout or JTextComponent for an ""ellipse with editable text"" component?","If you've ever used Visio or a UML class diagram editor, you have an idea of what I'm trying to accomplish: Within a JFrame, users can add ellipses that enclose a small editable text field. These ellipses can be repositioned within the frame when the user drags them. Clicking on an ellipse causes the text to become editable: a carat appears, highlighting a substring is possible, etc.
+
+I've got the basic structure set up: the 'ellipse' is a self-contained component, with methods called on it from the containing JFrame and its listeners. I've tried two approaches:
+
+1. in the component's draw() method, use a TextLayout to find bounds, position the contained text within the ellipse, and draw it to the frame using TextLayout's draw(). This is fast. Dragging the components around in the JFrame, mouse-over and mouse-click behavior are all straightforward. However for the editing functionality it looks like I will need to write a lot of custom code to handle hit testing, carat positioning, text highlighting, line wrapping, etc.
+
+2. having the component contain a reference to the containing JFrame, and adding or repositioning a TextComponent in that JFrame after drawing the ellipse. This has the advantage of all the built-in TextComponent behavior for editing and line wrapping. But the logistics are really sloppy, and positioning the TextComponent becomes messy too - especially when the user drags the component around.
+
+I'm quite possibly thinking about this all wrong. Can anyone suggest a simple way to do this that I haven't yet stumbled across?
+",swing,jtextcomponent,,,,,open
+8431608,12/08/2011 13:19:28,275264,02/17/2010 13:30:47,48,5,What is it that you can't do in Spring?,"I am evaluating the use of XML configurations for our applications and I have some basic requirements as mentioned in [this stackoverflow link][1]
+
+
+  [1]: http://stackoverflow.com/questions/8358791/how-to-create-java-objects-from-xml-tags-which-are-referring-each-other
+
+As per that discussion, it seems my requirements can be met by JAXB or Spring (perhaps, I need to write lesser amount of code in Spring). But I am not convinced about using Spring since my requirements are expected to grow (which is true for every application not just mine :-))
+
+
+Keeping that in mind, I am inclined to go with JAXB, so that I am able to extend my XML in any way I require. But as of now I am not able to think about the kind of use case where Spring will fail me.
+
+Could someone please share their experience of some scenarios where Spring does not provide enough flexibility and scenarios where JAXB would be much much better off to use. 
+",java,xml,spring,jaxb,,12/09/2011 01:14:02,not constructive
+8105958,11/12/2011 16:55:30,938436,09/10/2011 17:30:47,16,2,setTimeOut didn't worked in $(document).ready(),"When I used the setTimeOut() in the document.ready function, it is not working. The following is the code that I have used:
+
+    $(document).ready(function(){
+      function abc{
+        alert('Hi');
+      }
+      setTimeOut (abc, 2000);
+    				 
+    });
+
+What did I missed ?
+
+Thank you :)",javascript,jquery,html,,,11/12/2011 17:57:20,too localized
+6801899,07/23/2011 16:54:18,683512,03/30/2011 07:57:08,117,1,"How does ""deep freeze"" works ?","as we all know there is a software called ""deep freeze"" which you probably know what it does.
+
+Anyway, after some googling I noticed that kind of software(s) called sandboxing or virtualization software however, Im not quite sure since my further searches failed me.
+
+So, here is my question:
+
+How does deepfreeze actually works ? If it were making image of everything in computer(its called virtualization I guess) it would take so much space. If it were creating index of every file and checking them regulary, then it would make my computer ""freeze"".
+
+So whats the magic ? How does it actually works ? does it realize when I download files by some way ?",c#,windows,virtualization,sandboxing,deepfreeze,07/23/2011 17:18:27,not a real question
+5507225,03/31/2011 22:38:52,657142,03/13/2011 02:28:49,20,0,How do i secure this PHP script?,"I'm worried about sql injection, so how do i prevent it?
+I'm using this script but have had several people tell me its very insecure, if anyone can help by telling me how it would be great :).
+
+source code:
+
+    if(isset($_POST['lastmsg']))
+    {
+    $lastmsg=$_POST['lastmsg'];
+    $result=mysql_query(""SELECT * FROM updates WHERE item_id<'$lastmsg' ORDER BY item_id DESC LIMIT 16"");
+    $count=mysql_num_rows($result);
+    while($row=mysql_fetch_array($result))
+    {
+    $msg_id=$row['item_id'];
+    $message=$row['item_content'];
+   ",php,security,sql-injection,,,,open
+9470377,02/27/2012 18:41:10,1051935,11/17/2011 13:53:05,128,0,Application crashing with segue identifier in UITableViews,"I am trying make a segue call in a tableview , but the application crashes when I click on the cell ...
+
+    -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+       
+           switch (indexPath.row){
+            case 0:
+                [self performSegueWithIdentifier: @""segue1"" sender: self];
+                break;
+            case 1:
+                [self performSegueWithIdentifier: @""segue2"" sender: self];
+                break;
+            case 2:
+                [self button1];
+                break;
+            case 3:
+                [self button2];
+                break;  
+    }
+
+case 2 and 3 work perfectly fine , but case 0 and 1 crash with the following green error :
+
+    thread 1:Program received signal ""SIGBART"".
+
+thanks",objective-c,xcode4.2,storyboard,segue,,,open
+9363393,02/20/2012 15:13:31,79455,03/18/2009 11:54:26,1510,58,good looking docbook title page for design documents,"I am looking for a good looking PDF title page for (software) design or technical documents using docbook. The title page should use the layout commonly used by these documents with revision history, copyright notice at the bottom etc. 
+The default book title page does not include revision history or authors e-mail addresses.
+
+I know I can do this myself but to get it right and good looking will take a lot of effort and learning how docbook and FO works. Since others probably also use docbook I was wondering if they are willing to share their templates and configuration xsl. 
+
+I tried to google for it I could not find a complete example of a good looking title page.",docbook,design-documentation,,,,,open
+9796604,03/20/2012 23:34:28,129195,06/26/2009 04:27:31,10422,714,Public holiday web service,"I've looked at;
+
+http://stackoverflow.com/questions/6567554/public-holiday-syndication-feed-service
+
+http://stackoverflow.com/questions/59934/national-holiday-web-service
+
+But does anyone know of a WebService or Syndication for Australian Public Holidays?",c#,web-services,syndication-feed,holidays,,03/21/2012 06:35:35,too localized
+6066536,05/20/2011 01:16:41,753726,05/14/2011 15:20:16,18,0,Why my Facebook Profile can't be viewed (found) from logged out?,"While i'm logged out, my Facebook Profile **can not** be seen then.<br>
+I just wanna let others see me when i give them my link.<br><br>
+All others Facebook Profiles can be viewed without login.<br>
+I mean, for example you can see yourself:
+
+    https://www.facebook.com/xxxxxxxxxxxxxxx
+
+<br>For my profile, it is showing like:
+
+> This content is currently unavailable!<br>
+The page you requested cannot be displayed right now. It may be temporarily unavailable, the link you clicked on may have expired, or you may not have permission to view this page. 
+
+What privacy tweak should i do?",facebook,profile,privacy,,,05/20/2011 12:45:43,off topic
